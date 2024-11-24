@@ -26,5 +26,6 @@ jobs:
         path: |
           target/bruchrechnen-*-SNAPSHOT.jar
           target/bruchrechnen-*-SNAPSHOT-sources.jar
+          target/bruchrechnen-*-SNAPSHOT-javadoc.jar
         if-no-files-found: error
         retention-days: 3
