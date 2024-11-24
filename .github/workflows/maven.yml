@@ -20,7 +20,9 @@ jobs:
     - name: Bibliotheken mit Maven bauen
       run: ./mvnw --batch-mode clean package
     - name: Source-Dateien hinzufügen
-      run: zip -r target/bruchrechnen-0.0.1-SNAPSHOT-with-sources.zip target/bruchrechnen-*-SNAPSHOT.jar src/
+      run: |
+        cd target/
+        zip bruchrechnen-0.0.1-SNAPSHOT-with-sources.zip bruchrechnen-*-SNAPSHOT.jar bruchrechnen-*-SNAPSHOT-sources.jar
     - name: Jar-Datei veröffentlichen
       uses: actions/upload-artifact@v4
       with:
