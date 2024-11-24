@@ -9,7 +9,14 @@
     <packaging>jar</packaging>
  
     <name>bruchrechnen</name>
-    <url>http://www.example.com</url>
+    <url>https://github.com/MDecker-MobileComputing/Maven_BruchrechnerBibliothek</url>
+    <description>Bibliothek mit einer Klasse zum Bruchrechnen</description>
+    <licenses>
+        <license>
+          <name>BSD 3-Clause License</name>
+          <url>https://opensource.org/license/BSD-3-clause/</url>
+        </license>
+    </licenses>    
  
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
