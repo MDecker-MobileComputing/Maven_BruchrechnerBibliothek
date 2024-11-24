@@ -19,14 +19,17 @@ jobs:
       run: chmod u+x mvnw && ./mvnw --version
     - name: Bibliotheken mit Maven bauen
       run: ./mvnw --batch-mode clean package
-    - name: Source-Dateien hinzufügen
-      run: |
-        cd target/
-        zip bruchrechnen-0.0.1-SNAPSHOT-with-sources.zip bruchrechnen-*-SNAPSHOT.jar bruchrechnen-*-SNAPSHOT-sources.jar
-    - name: Jar-Datei veröffentlichen
+    - name: Jar-Datei mit Klassen veröffentlichen
       uses: actions/upload-artifact@v4
       with:
-        name: BruchrechnerBibliothek
-        path: target/bruchrechnen-0.0.1-SNAPSHOT-with-sources.zip
+        name: BruchrechnerBibliothek-Binary
+        path: target/bruchrechnen-*-SNAPSHOT.zip
+        if-no-files-found: error
+        retention-days: 3
+    - name: Jar-Datei mit Quellcode veröffentlichen
+      uses: actions/upload-artifact@v4
+      with:
+        name: BruchrechnerBibliothek-Quellcode
+        path: target/bruchrechnen-*-SNAPSHOT-sources.zip
         if-no-files-found: error
         retention-days: 3
