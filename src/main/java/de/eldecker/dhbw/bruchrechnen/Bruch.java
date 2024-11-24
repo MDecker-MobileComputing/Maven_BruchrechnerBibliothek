@@ -1,5 +1,7 @@
 package de.eldecker.dhbw.bruchrechnen;
 
+import java.util.Objects;
+
 
 /**
  * Klasse für Bruchrechnen.
@@ -97,6 +99,37 @@ class Bruch {
 
         return new Bruch( -_zaehler, _nenner );
     }
+    
+    
+    /**
+     * Addiert den Bruch mit einem anderen Bruch.
+     *
+     * @param b Bruch, mit dem addiert werden soll
+     *
+     * @return Gekürzte Summe
+     */
+    public Bruch addieren( Bruch b ) {
+
+        int zaehlerNeu = _zaehler*b._nenner + b._zaehler*_nenner;
+        int nennerNeu  = _nenner*b._nenner;
+
+        return new Bruch( zaehlerNeu, nennerNeu ).kuerze();
+    }
+
+
+    /**
+     * Subtrahiert den Bruch mit einem anderen Bruch.
+     *
+     * @param b Bruch, von dem subtrahiert werden soll
+     *
+     * @return Gekürztes Differenz
+     */
+    public Bruch subtrahieren( Bruch b ) {
+
+        Bruch bNegiert = b.negieren();
+
+        return addieren( bNegiert );
+    }    
 
 
     /**
@@ -105,7 +138,7 @@ class Bruch {
      *
      * @param b Bruch, mit dem multipliziert werden soll
      *
-     * @return Gekürztes Ergebnis
+     * @return Produkt, gekürzt
      */
     public Bruch multiplizieren( Bruch b ) {
 
@@ -132,37 +165,6 @@ class Bruch {
 
         return multiplizieren( bKehrwert );
     }
-
-
-    /**
-     * Addiert den Bruch mit einem anderen Bruch.
-     *
-     * @param b Bruch, mit dem addiert werden soll
-     *
-     * @return Gekürztes Ergebnis
-     */
-    public Bruch addieren( Bruch b ) {
-
-        int zaehlerNeu = _zaehler*b._nenner + b._zaehler*_nenner;
-        int nennerNeu  = _nenner*b._nenner;
-
-        return new Bruch( zaehlerNeu, nennerNeu ).kuerze();
-    }
-
-
-    /**
-     * Subtrahiert den Bruch mit einem anderen Bruch.
-     *
-     * @param b Bruch, von dem subtrahiert werden soll
-     *
-     * @return Gekürztes Ergebnis
-     */
-    public Bruch subtrahieren( Bruch b ) {
-
-        Bruch bNegiert = b.negieren();
-
-        return addieren( bNegiert );
-    }
     
     
     /**
@@ -185,6 +187,45 @@ class Bruch {
     public String toString() {
 
         return _zaehler + "/" + _nenner;
+    }
+    
+    
+    /**
+     * Methode berechnet Hash-Wert ("Fingerabdruck), berücksichtigt 
+     * dafür Wert von Zähler und Nenner.
+     * 
+     * @return Hash-Wert
+     */
+    @Override
+    public int hashCode() {
+        
+        return Objects.hash( _zaehler , _nenner );
+    }
+
+
+    /**
+     * Vergleich aufrufendes Objekt mit dem als Argument {@code obj} übergeben.
+     * 
+     * @return {@code true} gdw, wenn {@code obj} auch ein Objekt der Klasse
+     *         {@code Bruch} oder einer Unterklasse von {@code Bruch} ist
+     *        
+     */
+    @Override
+    public boolean equals( Object obj ) {
+        
+        if ( this == obj ) { return true; }
+            
+        if ( obj == null ) { return false; }
+        
+        if ( obj instanceof Bruch andererBruch ) {
+            
+            return _zaehler == andererBruch._zaehler && 
+                   _nenner  == andererBruch._nenner;
+            
+        } else { 
+         
+            return false;
+        }           
     }
 
 
