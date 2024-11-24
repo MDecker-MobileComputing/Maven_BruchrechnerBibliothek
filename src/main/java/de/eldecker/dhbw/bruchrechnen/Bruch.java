@@ -112,8 +112,8 @@ public class Bruch {
      */
     public Bruch addieren( Bruch b ) {
 
-        int zaehlerNeu = _zaehler*b._nenner + b._zaehler*_nenner;
-        int nennerNeu  = _nenner*b._nenner;
+        int zaehlerNeu = _zaehler * b._nenner + b._zaehler * _nenner;
+        int nennerNeu  = _nenner  * b._nenner;
 
         return new Bruch( zaehlerNeu, nennerNeu ).kuerze();
     }

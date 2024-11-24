@@ -4,7 +4,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  job-fatjar:
+  job-lib-bauen:
     runs-on: ubuntu-latest
     steps:
     - name: Git-Repo auschecken
@@ -17,12 +17,14 @@ jobs:
         cache: maven
     - name: Maven-Installation checken
       run: chmod u+x mvnw && ./mvnw --version
-    - name: FatJar-Datei mit Maven bauen
+    - name: Bibliotheken mit Maven bauen
       run: ./mvnw --batch-mode clean package
-    - name: FatJar-Datei veröffentlichen
+    - name: Source-Dateien hinzufügen
+      run: zip -r target/bruchrechnen-0.0.1-SNAPSHOT-with-sources.zip target/bruchrechnen-*-SNAPSHOT.jar src/
+    - name: Jar-Datei veröffentlichen
       uses: actions/upload-artifact@v4
       with:
         name: BruchrechnerBibliothek
-        path: target/bruchrechnen-*-SNAPSHOT.jar
+        path: target/bruchrechnen-0.0.1-SNAPSHOT-with-sources.zip
         if-no-files-found: error
         retention-days: 3

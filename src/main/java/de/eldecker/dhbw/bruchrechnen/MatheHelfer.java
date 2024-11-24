@@ -41,4 +41,31 @@ public class MatheHelfer {
         return x;
     }    
     
+    
+    /**
+     * Methode prüft, ob eine Zahl eine Primzahl ist 
+     * 
+     * @param n Zahl, die auf Prim-Eigenschaft geprüft werden soll
+     * 
+     * @return {@code true} gdw. {@code n} eine Primzahl ist.
+     */
+    public static boolean istPrimzahl( int n ) {
+        
+        if ( n <= 1 ) {
+            
+            return false;
+        }
+                
+        final int wurzelVonN = (int) Math.sqrt( n );
+        for ( int i = 2; i <= wurzelVonN ; i++ ) {
+            
+            if ( n % i == 0 ) {
+                
+                return false;
+            }
+        }
+
+        return true;
+    }    
+    
 }
