@@ -7,10 +7,10 @@ package de.eldecker.dhbw.bruchrechnen;
 class Bruch {
 
     /** Zähler des Bruchs. */
-    private int zaehler;
+    private int _zaehler;
     
     /** Nenner des Bruchs, darf nicht 0 sein. */
-    private int nenner;
+    private int _nenner;
 
 
     /**
@@ -33,11 +33,33 @@ class Bruch {
      */
     public Bruch( int zaehler, int nenner ) {
 
-          this.zaehler = zaehler;
-          this.nenner  = nenner;
+        _zaehler = zaehler;
+        _nenner  = nenner;
     }
 
 
+    /**
+     * Getter für Zähler-Wert.
+     * 
+     * @return Zähler-Wert.
+     */
+    public int getZaehler() {
+        
+        return _zaehler;
+    }
+
+    
+    /**
+     * Getter für Nenner-Wert.
+     * 
+     * @return Nenner-Wert.
+     */
+    public int getNenner() {
+        
+        return _nenner;
+    }
+
+    
     /**
      * Gibt gekürzten Bruch des aufgerufenen Objekts zurück,
      * z.B. {@code 1/2} für {@code 2/4}.
@@ -46,10 +68,10 @@ class Bruch {
      */
     public Bruch kuerze() {
 
-        int ggt = ggt( zaehler, nenner );
+        int ggt = ggt( _zaehler, _nenner );
 
-        int zaehlerNeu = zaehler / ggt;
-        int nennerNeu  = nenner  / ggt;
+        int zaehlerNeu = _zaehler / ggt;
+        int nennerNeu  = _nenner  / ggt;
 
         return new Bruch( zaehlerNeu, nennerNeu );
     }
@@ -62,21 +84,18 @@ class Bruch {
      */
     public Bruch kehrwert() {
 
-        return new Bruch( nenner, zaehler );
+        return new Bruch( _nenner, _zaehler );
     }
 
 
     /**
-     * Negiert den Bruch.
-     * <br>
-     * 
-     * Beispiel: der Kehrwert von {@code 3/4} ist {@code 4/3}.     
+     * Negiert den Bruch (negiert den Zähler-Wert).
      *
      * @return Negierter Bruch
      */
     public Bruch negieren() {
 
-        return new Bruch( -zaehler, nenner );
+        return new Bruch( -_zaehler, _nenner );
     }
 
 
@@ -90,8 +109,8 @@ class Bruch {
      */
     public Bruch multiplizieren( Bruch b ) {
 
-        int zaehlerNeu = b.zaehler * this.zaehler;
-        int nennerNeu  = b.nenner  * this.zaehler;
+        int zaehlerNeu = b._zaehler * _zaehler;
+        int nennerNeu  = b._nenner  * _nenner;
 
         Bruch produkt = new Bruch( zaehlerNeu, nennerNeu );
 
@@ -124,8 +143,8 @@ class Bruch {
      */
     public Bruch addieren( Bruch b ) {
 
-        int zaehlerNeu = zaehler*b.nenner + b.zaehler*nenner;
-        int nennerNeu  = nenner*b.nenner;
+        int zaehlerNeu = _zaehler*b._nenner + b._zaehler*_nenner;
+        int nennerNeu  = _nenner*b._nenner;
 
         return new Bruch( zaehlerNeu, nennerNeu ).kuerze();
     }
@@ -153,7 +172,7 @@ class Bruch {
      */
     public double wert() {
 
-        return (double) zaehler / nenner;
+        return (double) _zaehler / _nenner;
     }    
 
 
@@ -165,7 +184,7 @@ class Bruch {
     @Override
     public String toString() {
 
-        return zaehler + "/" + nenner;
+        return _zaehler + "/" + _nenner;
     }
 
 
