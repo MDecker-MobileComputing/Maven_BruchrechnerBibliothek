@@ -24,7 +24,7 @@ jobs:
       with:
         name: BruchrechnerBibliothek-Distribution
         path: |
-          target/bruchrechnen-*-SNAPSHOT.zip
-          target/bruchrechnen-*-SNAPSHOT-sources.zip
+          target/bruchrechnen-*-SNAPSHOT.jar
+          target/bruchrechnen-*-SNAPSHOT-sources.jar
         if-no-files-found: error
         retention-days: 3
