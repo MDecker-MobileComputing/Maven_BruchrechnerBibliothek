@@ -2,7 +2,7 @@ package de.eldecker.dhbw.bruchrechnen;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import static de.eldecker.dhbw.bruchrechnen.Bruch.ggt;
+import static de.eldecker.dhbw.bruchrechnen.MatheHelfer.ggt;
 
 import org.junit.jupiter.api.Test;
 
