@@ -1,5 +1,9 @@
 package de.eldecker.dhbw.bruchrechnen;
 
+
+/**
+ * Klasse mit Hilfsmethoden für mathematische Berechnungen. 
+ */
 public class MatheHelfer {
 
     /**
@@ -47,7 +51,7 @@ public class MatheHelfer {
      * 
      * @param n Zahl, die auf Prim-Eigenschaft geprüft werden soll
      * 
-     * @return {@code true} gdw. {@code n} eine Primzahl ist.
+     * @return {@code true} gdw. {@code n} eine Primzahl ist
      */
     public static boolean istPrimzahl( int n ) {
         
