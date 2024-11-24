@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * Klasse für Bruchrechnen.
  */
-class Bruch {
+public class Bruch {
 
     /** Zähler des Bruchs. */
     private int _zaehler;
