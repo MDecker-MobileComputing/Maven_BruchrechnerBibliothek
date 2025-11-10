@@ -2,7 +2,7 @@
 
 <br>
 
-Dieses Repo enthält ein Maven-Projekt mit einer kleinen Bibliothek für Bruchrechnen. 
+Dieses Repo enthält ein Maven-Projekt mit einer kleinen Bibliothek für Bruchrechnen.
 Wenn auf einem Rechner für dieses Projekt erfolgreich die Phase `install` ausgeführt
 wurden, dann kann in einem anderen Maven-Projekt die Bibliothek unter der folgenden
 Abhängigkeit referenziert werden:
@@ -17,7 +17,8 @@ Abhängigkeit referenziert werden:
 
 <br>
 
-Siehe [hier](https://github.com/MDecker-MobileComputing/Maven_BruchrechnerBibliothekVerwender ) für ein Maven-Projekt, dass diese Bibliothek verwendet.
+Siehe [hier](https://github.com/MDecker-MobileComputing/Maven_BruchrechnerBibliothekVerwender )
+für ein Maven-Projekt, dass diese Bibliothek verwendet.
 
 <br>
 
