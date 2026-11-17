@@ -24,7 +24,7 @@ public class MatheHelfer {
      * die kleinere von der größeren Zahl abgezogen wird.
      * <br><br>
      *
-     * Beispiel: {@code ggt( 12, 18 )} ergibt {@code 6}.
+     * Beispiel: {@code ggt( 12, 18 ) = 6}
      *
      * @param a Erster Wert
      *
@@ -32,7 +32,7 @@ public class MatheHelfer {
      *
      * @return Größter gemeinsamer Teiler
      */
-    public static int ggt ( int a, int b ) {
+    public static int ggt( int a, int b ) {
 
         if ( a == 0 ) { return b; }
 
