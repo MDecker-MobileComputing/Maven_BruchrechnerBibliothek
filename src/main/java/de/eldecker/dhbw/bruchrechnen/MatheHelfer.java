@@ -58,7 +58,12 @@ public class MatheHelfer {
 
 
     /**
-     * Methode prüft, ob eine Zahl eine Primzahl ist
+     * Methode prüft, ob eine Zahl eine Primzahl ist.
+     * <br><br>
+     * 
+     * Eine Zahl echt größer 1 ist genau dann eine Primzahl, 
+     * wenn sie nur durch 1 und sich selbst ohne Rest teilbar ist.
+     * Beispiele für Primzahlen: 3, 5, 7, 11, ...
      *
      * @param n Zahl, die auf Prim-Eigenschaft geprüft werden soll
      *
