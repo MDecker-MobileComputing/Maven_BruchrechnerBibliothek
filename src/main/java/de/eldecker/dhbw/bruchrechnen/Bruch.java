@@ -229,6 +229,5 @@ public class Bruch {
             return false;
         }           
     }
-
 }
 
