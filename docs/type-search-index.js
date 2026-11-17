@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"Alle Klassen und Schnittstellen","u":"allclasses-index.html","k":"18"},{"p":"de.eldecker.dhbw.bruchrechnen","l":"Bruch"},{"p":"de.eldecker.dhbw.bruchrechnen","l":"MatheHelfer"}];updateSearchResults();

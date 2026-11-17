@@ -9,6 +9,7 @@
     <groupId>de.eldecker.dhbw</groupId>
     <artifactId>bruchrechnen</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+
     <packaging>jar</packaging>
 
     <name>bruchrechnen</name>
@@ -22,13 +23,14 @@
     </licenses>
 
     <properties>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>25</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <maven.compiler.release>${java.version}</maven.compiler.release>
 
-        <junit>6.0.1</junit>
+        <junit>6.1.3</junit>
 
         <!-- Plugin versions -->
         <maven.shade>3.2.2</maven.shade>
@@ -38,11 +40,10 @@
         <maven.surefire>3.0.0-M5</maven.surefire>
         <maven.jar>3.2.0</maven.jar>
         <maven.install>3.0.0-M1</maven.install>
+
     </properties>
 
     <dependencies>
-        <!-- Dependencies -->
-
 
         <!-- Testing dependencies-->
         <dependency>

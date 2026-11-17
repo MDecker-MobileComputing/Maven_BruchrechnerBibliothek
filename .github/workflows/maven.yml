@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Git-Repo auschecken
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
     - name: JDK einrichten
-      uses: actions/setup-java@v4
+      uses: actions/setup-java@v6
       with:
         java-version: 25
         distribution: 'temurin'
@@ -20,7 +20,7 @@ jobs:
     - name: Bibliotheken mit Maven bauen
       run: ./mvnw --batch-mode clean package
     - name: Jar-Datei mit Klassen veröffentlichen
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: BruchrechnerBibliothek-Distribution
         path: |
